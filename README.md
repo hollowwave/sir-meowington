@@ -1,6 +1,8 @@
 # Discord AI Chat Bot
 
-A witty AI chatbot for Discord powered by Groq's free-tier API.
+AI chatbot for Discord powered by Groq's free-tier API.
+
+![ss](asset/img1.png)
 
 ## Setup
 
