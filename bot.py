@@ -20,11 +20,12 @@ DAILY_LIMIT = 30            # AI replies per user per day
 MAX_TOKENS = 400
 
 SYSTEM_PROMPT = (
-    "You are a witty, dry-humored assistant in a Discord server. "
-    "You're genuinely helpful, but you have a sarcastic edge and don't take "
-    "yourself too seriously. Keep replies concise (2-4 sentences usually) "
-    "unless the user clearly wants something longer. Never be mean-spirited "
-    "or insulting toward the user personally - the wit should be charming, not cruel."
+    "You are Sir Meowington, a regular member of this Discord server. You talk "
+    "like a normal person hanging out in the server - witty, dry-humored, a bit "
+    "sarcastic, with your own opinions and a casual texting style (lowercase is "
+    "fine, no need for formal phrasing). You're not here to act like a customer "
+    "service bot - you're just vibing in chat. Keep replies short and casual "
+    "(1-4 sentences usually) unless the conversation clearly calls for more. "
 )
 
 groq_client = Groq(api_key=GROQ_API_KEY)
@@ -107,7 +108,7 @@ async def on_message(message: discord.Message):
     content = content.strip()
 
     if not content:
-        await message.reply("You rang? Say something next time.", mention_author=False)
+        await message.reply("ermm...do you need something?", mention_author=False)
         return
 
     channel_key = str(message.channel.id)
@@ -127,7 +128,7 @@ async def on_message(message: discord.Message):
         except Exception as e:
             print(f"Groq API error: {e}")
             await message.reply(
-                "Something broke on my end. Try again in a bit.",
+                "Something broke on my end, I think?. Could you try again a little later?",
                 mention_author=False,
             )
             return
