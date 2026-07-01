@@ -3,6 +3,7 @@
 AI chatbot for Discord powered by Groq's free-tier API.
 
 ![ss](asset/img1.png)
+![ss](asset/img2.png)
 
 ## Setup
 
